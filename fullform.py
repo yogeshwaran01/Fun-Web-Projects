@@ -111,3 +111,6 @@ while True:
             print(g[0].capitalize()+" - "+g.capitalize())
     elif ans =="n":
         exit()
+def new():
+    pass
+    
