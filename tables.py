@@ -1,4 +1,4 @@
-#multiplication tables
+# multiplication tables
 print("======================================")
 print("INTEGER MULTIPLICATION TABLE GENERATOR")
 print("======================================")
