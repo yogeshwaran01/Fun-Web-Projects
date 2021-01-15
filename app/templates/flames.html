@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block ref %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flames_style.css') }}">
+{% endblock ref %}
+
+{% block content %}
+
+{% if game %}
+<div class="hit-the-floor">
+    {% if signal == "f" %}
+        <span class="diff">F</span>LAMES
+    {% elif signal == "l" %}
+        F<span class="diff">L</span>AMES
+    {% elif signal == "a" %}
+        FL<span class="diff">A</span>MES
+    {% elif signal == "m" %}
+        FLA<span class="diff">M</span>ES
+    {% elif signal == "e" %}
+        FLAM<span class="diff">E</span>S
+    {% elif signal == "s" %}
+        FLAME<span class="diff">S</span>
+    {% else %}
+        FLAMES
+    {% endif %}
+    
+</div>
+<h1 class="thickness">{{ game.result.upper() }}</h1>
+<div class="center">
+    <p class="text-center" style="font-size: xx-large;">{{ game.p1.upper() }}</p>
+    <p class="text-center" style="font-size: xx-large;">{{ game.p2.upper() }}</p>
+</div>
+
+{% else %}
+<div class="hit-the-floor">
+    FLAMES
+</div>
+{% endif %}
+
+<div class="container">
+
+    <form class="center" method="POST" action="{{ url_for('fun.flames') }}">
+
+        <div class="group">
+            <input type="text" required name="p1">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Player 1</label>
+        </div>
+
+        <div class="group">
+            <input type="text" required name="p2">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Player 2</label>
+        </div>
+
+        <button type="submit" class="btn btn-success center">Check</button>
+
+    </form>
+
+</div>
+{% endblock content %}

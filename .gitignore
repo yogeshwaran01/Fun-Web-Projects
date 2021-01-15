@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+migrations
+.pytest_cachess
+*.db
+venv
+.vscode

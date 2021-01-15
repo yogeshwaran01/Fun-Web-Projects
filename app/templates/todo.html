@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block ref %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/todo_style.css') }}">
+{% endblock ref %}
+
+{% block content %}
+
+<h2 style="text-align: center;">{{current_user.username}}'s Tasks</h2>
+
+<br>
+
+<div class="containers">
+    <br>
+    <h2 style="text-align: center;">
+        TODO LIST
+    </h2>
+    <br>
+    <div class="input-group mb-3">
+        <form action="task/add" class="input-group mb-3" method="POST">
+            <input type="text" class="form-control" id="task" placeholder="Add Task" name="task">
+            <button class="btn btn-outline-secondary" type="submit" id="but">Add</button>
+        </form>
+    </div>
+
+    <ul class="list-group list-group-flush">
+        {% for todo in current_user.todos %}
+        <li class="list-group-item">
+            <span>{{ todo }}</span>
+            <button type="button" value="{{ todo }}" class="btn btn-danger" style="float: right;"
+                onclick="location.href='task/remove?task={{ todo }}'">Delete</button>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<br>
+
+<a href="{{ url_for('auth.logout') }}" class="link-danger" style="justify-content: center; display:block; width: 100px; margin: 0 auto;">Logout</a>
+
+{% endblock %}
+
+{% block script %}
+{% endblock script %}
