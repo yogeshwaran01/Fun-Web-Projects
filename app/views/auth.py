@@ -22,7 +22,7 @@ def login():
         password = request.form.get("password")
         user = User.query.filter_by(username=username).first()
         if user is None or not user.check_password(password):
-            return "Failed"
+            return render_template("login.html", message="Username Not Found")
         login_user(user)
         return redirect(url_for("todo.todo_index"))
 
@@ -44,11 +44,11 @@ def register():
                 "register.html", title="Register", message="Email Already Found"
             )
         DB.add_user(username, password, email)
-        return redirect(url_for("auth.login"))
+        return render_template("login.html", message="Register Sucessfully")
     return render_template("register.html", title="Register")
 
 
 @bp.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for("index"))
+    return render_template("index.html", message="Logout Sucessfully")
