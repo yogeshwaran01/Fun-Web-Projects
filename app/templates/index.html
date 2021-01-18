@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a href="/auth/login">Login</a>
-    <a href="/auth/register">Register</a>
+<div class="container" style="width: auto;">
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-success" onclick="location.href = '/todo'">Task Management</button>
+        <button type="button" class="btn btn-success" onclick="location.href = '/tools/maskurl'">Mask The Link</button>
+        <button type="button" class="btn btn-success" onclick="location.href = '/tools/shorturl'">URL Shorting
+            Tool</button>
+        <button type="button" class="btn btn-success" onclick="location.href = '/tools/age'">Age Calculator</button>
+        <button type="button" class="btn btn-success" onclick="location.href = '/fun/flames'">Flames</button>
+    </div>
+</div>
 {% endblock content %}
