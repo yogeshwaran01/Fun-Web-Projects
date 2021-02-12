@@ -23,7 +23,7 @@ from .views import fun
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", title="Home")
 
 
 app.register_blueprint(auth.bp)
