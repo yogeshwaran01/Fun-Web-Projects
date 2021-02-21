@@ -7,7 +7,7 @@ class Configuartion:
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
     # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(base_dir, 'users.db')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ADMIN_USERNAME = "admin"
     ADMIN_PASSWORD = "admin"
