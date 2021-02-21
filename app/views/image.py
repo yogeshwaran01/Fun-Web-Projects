@@ -3,7 +3,6 @@ from urllib.parse import urlparse
 from flask import Blueprint
 from flask import request
 from flask import render_template
-from werkzeug.utils import secure_filename
 
 from app.models.image import DATABASE
 from config import Configuartion
