@@ -37,6 +37,6 @@ class DATABASE:
         data = Codes.query.filter_by(short_code=code).first()
         if data is None:
             return "404"
-        decompressed_data = decompress(data.code)
+        decompressed_data = decompress(bytes(data.code))
         decoder = Decoder(decompressed_data)
         return decoder.response()
