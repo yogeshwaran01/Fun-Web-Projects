@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 from flask import Blueprint
 from flask import request
 from flask import render_template
@@ -17,7 +19,9 @@ def image_upload():
         file.save(Configuartion.UPLOAD_DIR + f"/{filename}")
         file_source = Configuartion.UPLOAD_DIR + f"/{filename}"
         code = DATABASE.store_image(file_source)
-        return "http://127.0.0.1:5000/image/{}".format(code)
+        host_components = urlparse(request.host_url)
+        host_base = host_components.scheme + "://" + host_components.netloc
+        return f"{host_base}/image/{code}"
     return render_template("image.html")
 
 
