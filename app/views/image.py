@@ -15,10 +15,9 @@ bp = Blueprint("image", __name__, url_prefix="/image")
 def image_upload():
     if request.method == "POST":
         file = request.files["file"]
-        filename = secure_filename(file.filename)
-        file.save(Configuartion.UPLOAD_DIR + f"/{filename}")
-        file_source = Configuartion.UPLOAD_DIR + f"/{filename}"
-        code = DATABASE.store_image(file_source)
+        source = Configuartion.UPLOAD_DIR + f"/{file.filename}"
+        file.save(source)
+        code = DATABASE.store_image(source)
         host_components = urlparse(request.host_url)
         host_base = host_components.scheme + "://" + host_components.netloc
         return f"{host_base}/image/{code}"
