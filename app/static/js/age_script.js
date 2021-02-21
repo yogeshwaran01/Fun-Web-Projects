@@ -7,7 +7,7 @@ btn.onclick = () => {
     var date_ = new Date(date_val)
     var now_year = new Date().getFullYear()
     if (date_.getFullYear() >= now_year) {
-        alert("Furture Year not Allowed")
+        alert("Future Year not Allowed")
     }
     else {
         var api = `/tools/age?date=${date_val}`

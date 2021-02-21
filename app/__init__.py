@@ -19,6 +19,7 @@ from .views import auth
 from .views import todo
 from .views import tools
 from .views import fun
+from .views import image
 
 
 @app.route("/")
@@ -30,5 +31,7 @@ app.register_blueprint(auth.bp)
 app.register_blueprint(todo.bp)
 app.register_blueprint(tools.bp)
 app.register_blueprint(fun.bp)
+app.register_blueprint(image.bp)
 
 from .models.users import User, Todo
+from .models.image import Codes

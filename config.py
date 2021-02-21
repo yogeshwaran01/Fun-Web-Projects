@@ -12,3 +12,4 @@ class Configuartion:
     ADMIN_USERNAME = "admin"
     ADMIN_PASSWORD = "admin"
     ADMIN_MAIL = "admin@admin.com"
+    UPLOAD_DIR = base_dir + "/app/uploads"

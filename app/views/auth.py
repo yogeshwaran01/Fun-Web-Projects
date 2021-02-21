@@ -44,11 +44,11 @@ def register():
                 "register.html", title="Register", message="Email Already Found"
             )
         DB.add_user(username, password, email)
-        return render_template("login.html", message="Register Sucessfully")
+        return render_template("login.html", message="Register Successfully")
     return render_template("register.html", title="Register")
 
 
 @bp.route("/logout")
 def logout():
     logout_user()
-    return render_template("index.html", message="Logout Sucessfully")
+    return render_template("index.html", message="Logout Successfully")

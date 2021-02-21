@@ -14,7 +14,7 @@ bp = Blueprint("todo", __name__, url_prefix="/todo")
 @bp.route("/", methods=["POST", "GET"])
 @login_required
 def todo_index():
-    return render_template("todo.html", message="Logged In Sucessfully")
+    return render_template("todo.html", message="Logged In Successfully")
 
 
 @login_required
