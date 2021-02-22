@@ -19,8 +19,8 @@ def image_upload():
         code = DATABASE.store_image(source)
         host_components = urlparse(request.host_url)
         host_base = host_components.scheme + "://" + host_components.netloc
-        return f"{host_base}/image/{code}"
-    return render_template("image.html")
+        return render_template("image.html", url=f"{host_base}/image/{code}", message="Image uploaded Sucessfully")
+    return render_template("image.html", title="Free Image Hosting")
 
 
 @bp.route("/<code>")
