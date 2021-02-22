@@ -6,7 +6,7 @@ from app.utils.image_compress import Decoder, Encoder, decompress, compressor
 class Codes(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String())
+    code = db.Column(db.LargeBinary)
     short_code = db.Column(db.String(150))
 
 
@@ -37,6 +37,6 @@ class DATABASE:
         data = Codes.query.filter_by(short_code=code).first()
         if data is None:
             return "404"
-        decompressed_data = decompress(bytes(data.code))
+        decompressed_data = decompress(data.code)
         decoder = Decoder(decompressed_data)
         return decoder.response()
