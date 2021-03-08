@@ -5,7 +5,7 @@
 <p align="center">Some group of tools and Games made with Flask</p>
 
 <p align="center">
-    <a href="https://pypi.org/project/instagramy/https://github.com/yogeshwaran01/Fun-Web-Projects/actions/workflows/python-app.yml">
+    <a href="https://github.com/yogeshwaran01/Fun-Web-Projects/actions/workflows/python-app.yml">
     <img alt="PyPi" src="https://github.com/yogeshwaran01/Fun-Web-Projects/actions/workflows/python-app.yml/badge.svg"/>
     </a>
 </p>
