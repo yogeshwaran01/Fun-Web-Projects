@@ -12,7 +12,7 @@
 {% endblock ref %}
 
 {% block content %}
-<h1 style="text-align: center; color:darkgreen">Upload Image to  Free Host</h1>
+<h1 style="text-align: center; color:darkgreen">Upload Image to Free Host</h1>
 <h3 style="text-align: center; color:darkgreen">Size must less than 1MB</h3>
 <form class="form" action="" method="POST" enctype=multipart/form-data>
     <div class="mb-3">
@@ -28,4 +28,19 @@
     <h4>{{ url }}</h4>
 </div>
 {% endif %}
+<div class="container">
+    <div class="row">
+        {% for image in images %}
+        <div class="col-sm-6">
+            <div class="card" style="width: 100%;">
+                <img src="{{ image.link }}" class="card-img-top" alt="{{ image.code }}">
+                <div class="card-body">
+                    <p class="card-text" style="text-align: center;">{{ image.code }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}
