@@ -40,3 +40,14 @@ class DATABASE:
         decompressed_data = decompress(data.code)
         decoder = Decoder(decompressed_data)
         return decoder.response()
+
+    @staticmethod
+    def get_all_images():
+        images = []
+        for i in Codes.query.all():
+            data = {
+                "link": f"/image/{i.short_code}",
+                "code": i.short_code
+            }
+            images.append(data)
+        return images
