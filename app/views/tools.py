@@ -16,8 +16,11 @@ def mask_url():
         turl = request.form.get("turl")
         hurl = request.form.get("hurl")
         kw = request.form.get("kw")
-        masked_url = MaskUrl(turl, hurl, kw)
-        return render_template("mask_url.html", url=masked_url, title="Mask Url")
+        try:
+            masked_url = MaskUrl(turl, hurl, kw)
+            return render_template("mask_url.html", url=masked_url, title="Mask Url")
+        except KeyError:
+            return render_template("mask_url.html", url="Incorrect Url")
     return render_template("mask_url.html", title="Mask Url")
 
 
