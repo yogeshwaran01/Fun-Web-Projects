@@ -19,12 +19,3 @@ def test_url_mask(simple_client):
         )
 
         assert requests.get(context["url"].strip(), allow_redirects=True).ok is True
-
-
-def test_url_mask(simple_client):
-    with captured_templates() as templates:
-        simple_client.post("/tools/shorturl", data=dict(url="https://python.org"))
-        _, context = templates[0]
-        assert context["url"] == Shortner("https://python.org")
-
-        assert requests.get(context["url"].strip(), allow_redirects=True).ok is True

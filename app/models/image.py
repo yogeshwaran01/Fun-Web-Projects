@@ -6,7 +6,7 @@ from app.utils.image_compress import Decoder, Encoder, decompress, compressor
 class Codes(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String())
+    code = db.Column(db.LargeBinary)
     short_code = db.Column(db.String(150))
 
 
@@ -40,3 +40,14 @@ class DATABASE:
         decompressed_data = decompress(data.code)
         decoder = Decoder(decompressed_data)
         return decoder.response()
+
+    @staticmethod
+    def get_all_images():
+        images = []
+        for i in Codes.query.all():
+            data = {
+                "link": f"/image/{i.short_code}",
+                "code": i.short_code
+            }
+            images.append(data)
+        return images

@@ -1,9 +1,46 @@
 {% extends 'base.html' %}
 
+{% block ref %}
+<style>
+    .form {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+    }
+</style>
+{% endblock ref %}
+
 {% block content %}
-<h1>Upload new File</h1>
-<form action="" method="POST" enctype=multipart/form-data>
-    <p><input type=file name=file>
-        <input type=submit value=Upload>
+<h1 style="text-align: center; color:darkgreen">Upload Image to Free Host</h1>
+<h3 style="text-align: center; color:darkgreen">Size must less than 1MB</h3>
+<form class="form" action="" method="POST" enctype=multipart/form-data>
+    <div class="mb-3">
+        <input type="file" class="form-control" aria-label="file example" required name="file">
+        <div class="invalid-feedback">Load the Image First</div>
+        <br>
+        <button type="submit" class="btn btn-success form" id="btn">Upload</button>
+    </div>
 </form>
+{% if url %}
+<h4>Your image Hosted at</h4>
+<div class="alert alert-success" role="alert">
+    <h4>{{ url }}</h4>
+</div>
+{% endif %}
+<div class="container">
+    <div class="row">
+        {% for image in images %}
+        <div class="col-sm-6">
+            <div class="card" style="width: 100%;">
+                <img src="{{ image.link }}" class="card-img-top" alt="{{ image.code }}">
+                <div class="card-body">
+                    <p class="card-text" style="text-align: center;">{{ image.code }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}

@@ -40,3 +40,6 @@ urllib3==1.26.2
 Werkzeug==1.0.1
 wrapt==1.12.1
 WTForms==2.3.3
+WTForms==2.3.3
+gunicorn==20.0.4
+psycopg2-binary==2.8.6
