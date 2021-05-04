@@ -27,7 +27,8 @@ class UserStats:
             'forks': self.forks,
             'commits': self.commits,
             'repos': self.repos_count,
-            'followers': self.followers, 
+            'followers': self.followers,
+            'pic': self.user.avatar_url,
         }
 
 
