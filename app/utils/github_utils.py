@@ -1,12 +1,14 @@
 from collections import Counter
+import os
+
 from github import Github
 
-gh = Github("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")
+gh = Github(os.environ.get('GITHUB_TOKEN'))
 
 class UserStats:
 
     def __init__(self, username: str):
-        self.user = gh.get_user()
+        self.user = gh.get_user(username)
         self.user_repos = self.user.get_repos()
         self.name = self.user.name
         self.bio = self.user.bio
