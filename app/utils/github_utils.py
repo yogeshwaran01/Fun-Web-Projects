@@ -3,10 +3,10 @@ import os
 
 from github import Github
 
-gh = Github(os.environ.get('GITHUB_TOKEN'))
+gh = Github(os.environ.get("GITHUB_TOKEN"))
+
 
 class UserStats:
-
     def __init__(self, username: str):
         self.user = gh.get_user(username)
         self.user_repos = self.user.get_repos()
@@ -15,24 +15,27 @@ class UserStats:
         self.web = self.user.blog
         self.stars = sum([repo.stargazers_count for repo in self.user_repos])
         self.forks = sum([repo.forks_count for repo in self.user_repos])
-        self.commits = sum([0 if repo.fork else repo.get_commits().totalCount for repo in self.user_repos])
+        self.commits = sum(
+            [
+                0 if repo.fork else repo.get_commits().totalCount
+                for repo in self.user_repos
+            ]
+        )
         self.repos_count = len(list(self.user_repos))
         self.followers = self.user.followers
 
-
     def stats(self):
         return {
-            'name': self.name,
-            'bio': self.bio,
-            'web': self.web,
-            'stars': self.stars,
-            'forks': self.forks,
-            'commits': self.commits,
-            'repos': self.repos_count,
-            'followers': self.followers,
-            'pic': self.user.avatar_url,
+            "name": self.name,
+            "bio": self.bio,
+            "web": self.web,
+            "stars": self.stars,
+            "forks": self.forks,
+            "commits": self.commits,
+            "repos": self.repos_count,
+            "followers": self.followers,
+            "pic": self.user.avatar_url,
         }
-
 
     def repos_per_langs(self):
         data = []
@@ -65,9 +68,9 @@ class UserStats:
             else:
                 name = repo.name
                 commits.append((name, commit_count))
-        
+
         return commits
-    
+
     def star_per_repo(self):
         star = []
         for repo in self.user_repos:

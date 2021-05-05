@@ -40,4 +40,4 @@ def lapse():
 
 @bp.route("/dice")
 def dice():
-    return render_template('dice.html')
+    return render_template("dice.html")

@@ -1,5 +1,5 @@
 import pygal
-from pygal.style import Style
+
 
 def pie_chart(list_of_tuple: list, title):
     pie = pygal.Pie()
