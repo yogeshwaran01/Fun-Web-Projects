@@ -58,7 +58,7 @@ class Age:
             "as_hours": self.total_hours(),
             "as_minutes": self.today_minutes(),
             "as_seconds": self.today_seconds(),
-            "weekday": self.birthday_weekday
+            "weekday": self.birthday_weekday,
         }
 
     def __repr__(self):

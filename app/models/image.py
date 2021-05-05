@@ -11,7 +11,6 @@ class Codes(db.Model):
 
 
 class DATABASE:
-
     @staticmethod
     def get_shortcode_from_code(code):
         data = Codes.query.filter_by(code=code).first()
@@ -45,9 +44,6 @@ class DATABASE:
     def get_all_images():
         images = []
         for i in Codes.query.all():
-            data = {
-                "link": f"/image/{i.short_code}",
-                "code": i.short_code
-            }
+            data = {"link": f"/image/{i.short_code}", "code": i.short_code}
             images.append(data)
         return images
