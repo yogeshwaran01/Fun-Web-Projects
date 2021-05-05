@@ -22,3 +22,4 @@ All in one Flask App
 - Url Masking
 - Flames Game
 - New Year Countdown
+- Github Stats
