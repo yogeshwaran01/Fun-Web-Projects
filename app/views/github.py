@@ -25,7 +25,7 @@ def github_stats_render(username):
         return pie_chart(data, query)
     links = [f"/github/{username}?q={i}" for i in possible_query]
     return render_template(
-        "github.html", name=user.name, links=links, title=user.name, stats=user.stats()
+        "github.html", name=user.name, links=links, title=user.name, stats=user.stats(), username=username
     )
 
 

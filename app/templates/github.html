@@ -39,6 +39,7 @@
 {% block content %}
     <h1 style="text-align: center;">{{ name }}</h1>
     <h6 style="text-align: center; color: red;">Open Image in new Tab for best experience</h6>
+    <img src="https://github-stats-terminal-style.herokuapp.com/{{ username }}" id='main' alt="">
     {% for link in links %}
     <img src="{{ link }}" id="main" width="800" height="800">
     </div>
