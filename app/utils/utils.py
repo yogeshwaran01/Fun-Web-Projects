@@ -8,3 +8,7 @@ def generate_shortcode(selection_list: list):
             break
         continue
     return code
+
+
+def generate_seq():
+    return secrets.token_urlsafe(5)
