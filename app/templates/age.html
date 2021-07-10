@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block ref %}
+{% extends 'base.html' %} {% block ref %}
 <style>
     body {
         display: block;
@@ -8,27 +6,25 @@
         padding-bottom: 40px;
         background-color: #f5f5f5;
     }
-
+    
     .form {
         width: 100%;
         max-width: 330px;
         padding: 15px;
         margin: auto;
     }
-
+    
     .datetime {
         margin: 30px;
         position: relative;
         overflow: hidden;
     }
-
+    
     .day {
         font-size: 64px;
     }
 </style>
-{% endblock ref %}
-
-{% block content %}
+{% endblock ref %} {% block content %}
 <h1 style="text-align: center; color:darkgreen">Age Calculator</h1>
 <div class="form">
     <input type="date" id='date_p' class="input-group input-group-lg form">
@@ -46,12 +42,9 @@
         <div class="card-body">
             <h5 class="card-title" style="text-align: center;">Age</h5>
             <ul>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.year }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Years</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.months }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Months</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.days }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Days</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.year }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Years</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.months }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Months</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.days }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Days</span></h6>
             </ul>
         </div>
     </div>
@@ -62,26 +55,16 @@
         <div class="card-body">
             <h5 class="card-title" style="text-align: center;">Summary</h5>
             <ul>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_months }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Months</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_weeks }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Weeks</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_days }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Hours</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_hours }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Minutes</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_minutes }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Weeks</span></h6>
-                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_seconds }} <span
-                        class="card-subtitle mb-2 text-muted" style="font-size: medium;">Seconds</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_months }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Months</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_weeks }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Weeks</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_days }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Hours</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_hours }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Minutes</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_minutes }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Weeks</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted" style="font-size: xx-large;">{{ age.as_seconds }} <span class="card-subtitle mb-2 text-muted" style="font-size: medium;">Seconds</span></h6>
             </ul>
         </div>
     </div>
 </div>
-{% endif %}
-
-{% endblock content %}
-
-{% block script %}
+{% endif %} {% endblock content %} {% block script %}
 <script src="{{ url_for('static', filename='js/age_script.js') }}"></script>
 {% endblock script %}

@@ -1,10 +1,5 @@
-{% extends 'base.html' %}
-
-{% block ref %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/todo_style.css') }}">
-{% endblock ref %}
-
-{% block content %}
+{% extends 'base.html' %} {% block ref %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/todo_style.css') }}"> {% endblock ref %} {% block content %}
 
 <h2 style="text-align: center;">{{current_user.username}}'s Tasks</h2>
 
@@ -27,8 +22,7 @@
         {% for todo in current_user.todos %}
         <li class="list-group-item">
             <span>{{ todo }}</span>
-            <button type="button" value="{{ todo }}" class="btn btn-danger" style="float: right;"
-                onclick="location.href='task/remove?task={{ todo }}'">Delete</button>
+            <button type="button" value="{{ todo }}" class="btn btn-danger" style="float: right;" onclick="location.href='task/remove?task={{ todo }}'">Delete</button>
         </li>
         {% endfor %}
     </ul>
@@ -36,9 +30,4 @@
 
 <br>
 
-<a id="link" href="{{ url_for('auth.logout') }}" class="link-danger" style="justify-content: center; display:block; width: 100px; margin: 0 auto;">Logout</a>
-
-{% endblock %}
-
-{% block script %}
-{% endblock script %}
+<a id="link" href="{{ url_for('auth.logout') }}" class="link-danger" style="justify-content: center; display:block; width: 100px; margin: 0 auto;">Logout</a> {% endblock %} {% block script %} {% endblock script %}

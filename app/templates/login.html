@@ -1,10 +1,5 @@
-{% extends 'base.html' %}
-
-{% block ref %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/login_style.css')}}">
-{% endblock ref %}
-
-{% block content %}
+{% extends 'base.html' %} {% block ref %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/login_style.css')}}"> {% endblock ref %} {% block content %}
 <div class="form-signin">
     <form action="/auth/login" method="POST">
         <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Please sign in</h1>

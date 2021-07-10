@@ -1,29 +1,14 @@
-{% extends 'base.html' %}
-
-{% block ref %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/flames_style.css') }}">
-{% endblock ref %}
-
-{% block content %}
-
-{% if game %}
+{% extends 'base.html' %} {% block ref %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/flames_style.css') }}"> {% endblock ref %} {% block content %} {% if game %}
 <div class="hit-the-floor">
     {% if signal == "f" %}
-        <span class="diff">F</span>LAMES
-    {% elif signal == "l" %}
-        F<span class="diff">L</span>AMES
-    {% elif signal == "a" %}
-        FL<span class="diff">A</span>MES
-    {% elif signal == "m" %}
-        FLA<span class="diff">M</span>ES
-    {% elif signal == "e" %}
-        FLAM<span class="diff">E</span>S
-    {% elif signal == "s" %}
-        FLAME<span class="diff">S</span>
-    {% else %}
-        FLAMES
-    {% endif %}
-    
+    <span class="diff">F</span>LAMES {% elif signal == "l" %} F
+    <span class="diff">L</span>AMES {% elif signal == "a" %} FL
+    <span class="diff">A</span>MES {% elif signal == "m" %} FLA
+    <span class="diff">M</span>ES {% elif signal == "e" %} FLAM
+    <span class="diff">E</span>S {% elif signal == "s" %} FLAME
+    <span class="diff">S</span> {% else %} FLAMES {% endif %}
+
 </div>
 <h1 class="thickness">{{ game.result.upper() }}</h1>
 <div class="center">

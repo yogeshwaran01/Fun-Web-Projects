@@ -1,17 +1,12 @@
-{% extends 'base.html' %}
-
-{% block ref %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/login_style.css')}}">
-{% endblock ref %}
-
-{% block content %}
+{% extends 'base.html' %} {% block ref %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/login_style.css')}}"> {% endblock ref %} {% block content %}
 <div class="form-signin">
     <form action="{{ url_for('tools.mask_url') }}" method="POST">
         <h1 class="h3 mb-3 fw-normal" style="text-align: center;">MaskUrl</h1>
         <input type="url" id="inputTurl" class="form-control" placeholder="Target Link" required autofocus name="turl">
         <div class="row-fluid show-grid" style="text-align: right;">
-            <div class="span6" style="color: red;"> <span style="color: black;">Example: </span>
-                https://ngrok.io/idf</div>
+            <div class="span6" style="color: red;"> <span style="color: black;">Example: </span> https://ngrok.io/idf
+            </div>
         </div>
 
         <input type="url" id="inputHurl" class="form-control" placeholder="URL to Mask Target" required name="hurl">
@@ -29,22 +24,19 @@
             <span id="error">
             </span>
         </div>
-        <br>
-        {% if url %}
+        <br> {% if url %}
         <div class="alert alert-success" role="alert">
             {{ url }}
         </div>
         {% endif %}
     </form>
 </div>
-{% endblock content %}
-
-{% block script %}
+{% endblock content %} {% block script %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     var text = document.getElementById('error').innerHTML
-    $(function () {
-        $('#kw').on('keypress', function (e) {
+    $(function() {
+        $('#kw').on('keypress', function(e) {
             if (e.which == 32) {
                 text = "Don' user spacest";
                 return false;

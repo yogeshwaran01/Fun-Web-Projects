@@ -1,10 +1,5 @@
-{% extends 'base.html' %}
-
-{% block ref %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/login_style.css')}}">
-{% endblock ref %}
-
-{% block content %}
+{% extends 'base.html' %} {% block ref %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/login_style.css')}}"> {% endblock ref %} {% block content %}
 <div class="form-signin">
     <form action="{{ url_for('tools.short_url') }}" method="POST">
         <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Make Link Shorter</h1>
@@ -12,8 +7,7 @@
         <br>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Short Link</button>
         <br>
-        <br>
-        {% if url %}
+        <br> {% if url %}
         <div class="alert alert-success" role="alert">
             {{ url }}
         </div>
